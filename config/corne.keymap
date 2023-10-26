@@ -9,7 +9,7 @@
 
 / {
     macros {
-        ctrl_esc: ctrl_esc {
+        Open_ITerm: Open_ITerm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -20,7 +20,40 @@
                 <&macro_release>,
                 <&kp LCTRL>;
 
-            label = "CTRL_ESC";
+            label = "OPEN_ITERM";
+        };
+        Previous_track: Previous_track {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT &kp LCMD>,
+                <&macro_tap>,
+                <&kp LEFT_BRACE>;
+
+            label = "PREVIOUS_TRACK";
+        };
+        Next_Track: Next_Track {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT &kp LCMD>,
+                <&macro_tap>,
+                <&kp RIGHT_BRACE>;
+
+            label = "NEXT_TRACK";
+        };
+        Play_Pause: Play_Pause {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT &kp LCMD>,
+                <&macro_tap>,
+                <&kp SPACE>;
+
+            label = "PLAY_PAUSE";
         };
     };
 
@@ -50,10 +83,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC         &trans          &kp UP_ARROW    &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans   &trans  &trans    &trans  &trans  &kp BSPC
-&kp CAPS        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &trans   &trans  &trans    &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans          &trans          &ctrl_esc        &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &trans    &trans  &trans  &kp RIGHT_SHIFT
-                                                &kp LGUI         &trans                &kp SPACE                &kp RET  &trans  &kp RALT
+&kp ESC         &trans           &kp UP_ARROW    &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans   &trans  &trans    &trans  &trans  &kp BSPC
+&kp CAPS        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &trans   &trans  &trans    &trans  &trans  &trans
+&kp LEFT_SHIFT  &Previous_track  &Play_Pause     &Next_Track      &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &trans    &trans  &trans  &kp RIGHT_SHIFT
+                                                 &kp LGUI         &trans                &kp SPACE                &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -65,9 +98,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE       &trans  &trans  &trans    &trans  &trans       &kp MINUS  &kp N7        &kp N8        &kp N9        &trans  &kp BSPC
-&trans          &trans  &trans  &trans    &trans  &trans       &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp BSLH
-&kp LEFT_SHIFT  &trans  &trans  &trans    &trans  &trans       &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp RIGHT_SHIFT
+&kp GRAVE       &trans  &trans  &trans    &trans  &trans       &kp MINUS  &kp N7        &kp N8        &kp N9        &Open_ITerm  &kp BSPC
+&trans          &trans  &trans  &trans    &trans  &trans       &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans       &kp BSLH
+&kp LEFT_SHIFT  &trans  &trans  &trans    &trans  &trans       &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans       &kp RIGHT_SHIFT
                                 &kp LGUI  &trans  &kp SPACE    &kp RET    &trans        &kp RALT
             >;
         };
