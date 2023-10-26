@@ -9,7 +9,7 @@
 
 / {
     macros {
-        Open_ITerm: Open_ITerm {
+        ITerm: ITerm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -20,9 +20,9 @@
                 <&macro_release>,
                 <&kp LCTRL>;
 
-            label = "OPEN_ITERM";
+            label = "ITERM";
         };
-        Previous_track: Previous_track {
+        Previous: Previous {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -33,9 +33,9 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LCMD>;
 
-            label = "PREVIOUS_TRACK";
+            label = "PREVIOUS";
         };
-        Next_Track: Next_Track {
+        Play_Pause: Play_Pause {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -46,9 +46,9 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LCMD>;
 
-            label = "NEXT_TRACK";
+            label = "PLAY_PAUSE";
         };
-        Play_Pause: Play_Pause {
+        Next: Next {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -59,7 +59,7 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LCMD>;
 
-            label = "PLAY_PAUSE";
+            label = "NEXT";
         };
     };
 
@@ -89,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC         &trans           &kp UP_ARROW    &Open_ITerm      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans   &trans  &trans    &trans  &trans  &kp BSPC
-&kp CAPS        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &trans   &trans  &trans    &trans  &trans  &trans
-&kp LEFT_SHIFT  &Previous_track  &Play_Pause     &Next_Track      &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &trans    &trans  &trans  &kp RIGHT_SHIFT
-                                                 &kp LGUI         &trans                &kp SPACE                &kp RET  &trans  &kp RALT
+&kp ESC         &trans          &kp UP_ARROW    &ITerm           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans   &trans  &trans    &trans  &trans  &kp BSPC
+&kp CAPS        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &trans   &trans  &trans    &trans  &trans  &trans
+&kp LEFT_SHIFT  &Previous       &Play_Pause     &Next            &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &trans    &trans  &trans  &kp RIGHT_SHIFT
+                                                &kp LGUI         &trans                &kp SPACE                &kp RET  &trans  &kp RALT
             >;
         };
 
