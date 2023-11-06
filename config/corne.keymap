@@ -91,7 +91,7 @@
             bindings = <
 &kp LCTRL       &trans          &kp UP_ARROW    &ITerm           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans   &trans  &trans     &trans  &Play_Pause  &kp BSPC
 &kp CAPS        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &trans   &trans  &trans     &trans  &trans       &trans
-&kp LEFT_SHIFT  &Previous       &Play_Pause     &Next            &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &Previous  &Next   &trans       &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &trans          &trans          &trans           &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans   &trans  &Previous  &Next   &trans       &kp RIGHT_SHIFT
                                                 &kp LGUI         &trans                &kp SPACE                &kp RET  &trans  &kp RALT
             >;
         };
