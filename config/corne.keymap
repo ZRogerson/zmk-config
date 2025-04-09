@@ -68,6 +68,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Settings {
+            bindings = <&mo 3>;
+            key-positions = <37 40>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -109,10 +119,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE       &trans  &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &out OUT_BLE    &kp MINUS  &kp N7        &kp N8        &kp N9        &trans  &kp BSPC
-&trans          &trans  &trans      &trans      &trans      &trans          &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp BSLH
-&kp LEFT_SHIFT  &trans  &trans      &trans      &trans      &trans          &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp RIGHT_SHIFT
-                                    &kp LGUI    &trans      &kp SPACE       &kp RET    &trans        &kp RALT
+&kp GRAVE       &trans  &trans  &trans    &trans  &trans       &kp MINUS  &kp N7        &kp N8        &kp N9        &trans  &kp BSPC
+&trans          &trans  &trans  &trans    &trans  &trans       &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp BSLH
+&kp LEFT_SHIFT  &trans  &trans  &trans    &trans  &trans       &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp RIGHT_SHIFT
+                                &kp LGUI  &trans  &kp SPACE    &kp RET    &trans        &kp RALT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &bt BT_CLR  &bt BT_PRV  &bt BT_NXT    &out OUT_BLE  &out OUT_USB  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &trans      &trans        &trans        &trans        &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &trans      &trans        &trans        &trans        &trans  &trans  &trans  &trans
+                        &trans      &trans      &trans        &trans        &trans        &trans
             >;
         };
     };
