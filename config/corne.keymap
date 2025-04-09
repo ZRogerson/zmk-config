@@ -73,8 +73,8 @@
 
         Settings {
             bindings = <&mo 3>;
-            key-positions = <37 40>;
-            layers = <3>;
+            key-positions = <40 37>;
+            layers = <0>;
         };
     };
 
@@ -126,7 +126,7 @@
             >;
         };
 
-        layer_3 {
+        settings {
             bindings = <
 &trans  &trans  &trans  &bt BT_CLR  &bt BT_PRV  &bt BT_NXT    &out OUT_BLE  &out OUT_USB  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans      &trans      &trans        &trans        &trans        &trans  &trans  &trans  &trans
